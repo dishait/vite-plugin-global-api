@@ -1,6 +1,6 @@
-# vite-plugin-template
+# vite-plugin-global-api
 
-开箱即用的 vite 插件模板
+vite 面向组件库的全局 api 的插件
 
 <br />
 
@@ -90,7 +90,7 @@ pnpm release
 
 ## License
 
-Made with name
+Made with markthree
 
 Published under [MIT License](./LICENSE).
 
