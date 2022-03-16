@@ -43,7 +43,8 @@
   ],
   "author": {
     "name": "markthree",
-    "url": "https://github.com/markthree"
+    "url": "https://github.com/markthree",
+    "email": "1801982702@qq.com"
   },
   "bugs": {
     "url": "https://github.com/dishait/vite-plugin-global-api/issues"
