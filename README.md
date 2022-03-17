@@ -1,89 +1,91 @@
 # vite-plugin-global-api
 
-vite 面向组件库的全局 api 的插件
+`vite` 面向组件库的全局 `api` 的插件
 
 <br />
 
 ## Features 🦖
 
-- pnpm 的
-- `vitest` 测试
-- 开箱即用的
-- `typescript` 的
+### naive-ui
 
-<br />
+- [dialog](https://www.naiveui.com/zh-CN/os-theme/components/dialog)
+- [message](https://www.naiveui.com/zh-CN/os-theme/components/message)
+- [notification](https://www.naiveui.com/zh-CN/os-theme/components/notification)
+
 <br />
 
 ## Usage 🦕
 
 
-### install
+1. 安装
 
 ```shell
-# 工作区安装
-pnpm i
-
-# 源码依赖安装
-pnpm i -w
+npm i vite-plugin-global-api -D
 ```
 
-### init:info
+2. 配置
+
+```ts
+// vite.config.js 或者 vite.config.js
+import { defineConfig } from "vite"
+import GlobalApi from "vite-plugin-global-api"
+
+export default defineConfig({
+    plugins: [GlobalApi()]
+})
+```
+
+```ts
+// main.js or main.ts
+import App from './App.vue'
+import { createApp } from 'vue'
+import { useModules } from 'virtual:modules'
+import { useGlobalApi } from 'virtual:global-api'
+
+const app = createApp(App)
+
+useGlobalApi(app) // 获取 api
+
+app.mount('#app')
+```
+
+3. 使用
 
 ```shell
-pnpm init:info
+npm i naive-ui
 ```
 
-### test
+```ts
+import { n } from 'virtual:global-api'
 
-```shell
-pnpm test
+// n 为 naive-ui 的全局 api 实例
+n.dialog.info({ title: 'Dialog' })
 
-# or pnpm test:watch
+n.message.info('message')
+
+n.notification.create({
+    title: 'Notification'
+})
 ```
 
-### build
+注意 `naive-ui` 的全局 `api` 使用，必须在 `App.vue` 挂载之后。
 
-```shell
-pnpm build
+<br />
+
+### Type 🐃
+
+如果你是 `ts` 项目，可以在 `tsconfig.json` 中添加如下配置以得到虚拟模块的类型声明
+
+```json
+{
+    "compilerOptions": {
+        "types": ["vite-plugin-global-api/client"]
+    }
+}
 ```
 
-### coverage
 
-```shell
-pnpm coverage
-```
 
-### dev
-
-```shell
-pnpm dev
-```
-
-### publish
-
-```shell
-npm publish
-```
-
-### play
-
-```shell
-# 工作区 dev
-pnpm play
-
-# or pnpm play:open
-# or pnpm play:host
-# or pnpm play:build
-# or pnpm play:preview
-# or pnpm play:preview:open
-# or pnpm play:preview:host
-```
-
-### release
-
-```shell
-pnpm release
-```
 
 <br />
 <br />
