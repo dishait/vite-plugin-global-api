@@ -39,7 +39,6 @@ export default defineConfig({
 // main.js or main.ts
 import App from './App.vue'
 import { createApp } from 'vue'
-import { useModules } from 'virtual:modules'
 import { useGlobalApi } from 'virtual:global-api'
 
 const app = createApp(App)
