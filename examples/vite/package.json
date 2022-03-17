@@ -15,8 +15,13 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
     "vite": "^2.8.1",
+    "vite-plugin-global-api": "workspace:*",
     "vite-plugin-inspect": "^0.3.14",
-    "vue": "^3.2.30",
-    "vite-plugin-global-api": "workspace:*"
+    "vue": "^3.2.30"
+  },
+  "dependencies": {
+    "naive-ui": "^2.26.4",
+    "vite-plugin-use-modules": "^1.0.1",
+    "vue-router": "^4.0.14"
   }
 }
