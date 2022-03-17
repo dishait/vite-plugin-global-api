@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "vite-plugin-global-api",
   "description": "vite 面向组件库的全局 api 的插件",
   "main": "./dist/index.js",
